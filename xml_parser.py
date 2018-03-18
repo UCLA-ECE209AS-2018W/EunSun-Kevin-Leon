@@ -1,7 +1,7 @@
-#!/usr/bin/env python
-
+#!/usr/bin/python2.7
 import sys
 import fileinput
+import string
 
 inputfile = open(sys.argv[1], 'r')
 outputfile = open("new_config.xml", 'w')
@@ -32,6 +32,9 @@ outputfile.writelines(lines)
 # close the file after reading the lines.
 inputfile.close()
 outputfile.close()
-with fileinput.FileInput("new_config.xml", inplace=True, backup='.bak') as file:
-    for line in file:
-        print(line.replace("<username>Easy Rule</username>", "<username>Leon Test</username>"), end='')
+
+f = fileinput.FileInput("new_config.xml", inplace=True, backup='.bak')
+for line in f:
+    sys.stdout.write(string.replace(line, "<username>Easy Rule</username>", "<username>Leon Test</username>"))
+f.close()
+

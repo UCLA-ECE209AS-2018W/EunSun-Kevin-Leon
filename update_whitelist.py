@@ -75,7 +75,7 @@ def filterlog_search(filename, searchtext1, searchtext2):
 #                             print(source_ip,destination_ip)
 
 
-log_f = 'testlogfile.log'
+log_f = '/var/log/filter.log'
 white_f = 'whitelist.txt'
 
 searchtext1 = 'block'

@@ -1,10 +1,6 @@
 #!/usr/bin/python2.7
 
 import subprocess
-print "start"
-subprocess.call("sleep.sh")
-print "end"
-
 
 import re
 import json
@@ -45,6 +41,9 @@ def add_whitelist(sourceip, destinationip):
             
     with open(white_f, 'w') as file:
         file.write(json.dumps(whitelist_dict)) # use `json.loads` to do the reverse
+	
+	subprocess.call(["./update_rules.csh", sourceip, destination_ip])
+
 
         
 def filterlog_search(filename, searchtext1, searchtext2):

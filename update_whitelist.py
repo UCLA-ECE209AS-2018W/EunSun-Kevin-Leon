@@ -18,7 +18,7 @@ def timedifference(a,b):
 
 def add_whitelist(sourceip, destinationip):
     dict_list = []
-    print(sourceip, destinationip)
+    #print(sourceip, destinationip)
     #open dictionary text file
     with open(white_f, 'r') as file:
         json_dict = file.read()
@@ -32,17 +32,17 @@ def add_whitelist(sourceip, destinationip):
             if destinationip not in whitelist_dict[sourceip]:
                 whitelist_dict[sourceip].append(destinationip)
             #print(whitelist_dict[sourceip])
+                subprocess.call(["./update_rules.csh", sourceip, destinationip])
         else:
-            print("the key does not exist")
 #             print(sourceip, destinationip)
             current_time =  timetostr(datetime.datetime.now())
             dict_list = [current_time, destinationip]
             whitelist_dict.update({sourceip:dict_list})
             
+    	    subprocess.call(["./update_rules.csh", sourceip, destinationip])
     with open(white_f, 'w') as file:
         file.write(json.dumps(whitelist_dict)) # use `json.loads` to do the reverse
 	
-	subprocess.call(["./update_rules.csh", sourceip, destinationip])
 
 
         

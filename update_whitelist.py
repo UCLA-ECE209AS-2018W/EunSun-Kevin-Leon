@@ -26,10 +26,10 @@ def add_whitelist(sourceip, destinationip):
         else: 
             whitelist_dict = {}
         #checks if the sourceip address exists
-        if (sourceip) in whitelist_dict:
+        if sourceip in whitelist_dict:
             #sourceip address exists
             #checks if the destinationip address exists
-            if not (destinationip) in whitelist_dict[sourceip]:
+            if destinationip not in whitelist_dict[sourceip]:
                 whitelist_dict[sourceip].append(destinationip)
             #print(whitelist_dict[sourceip])
         else:
@@ -75,8 +75,8 @@ def filterlog_search(filename, searchtext1, searchtext2):
 #                             print(source_ip,destination_ip)
 
 
-log_f = 'C:\Users\EUN SUN LEE\Documents\EE209 Project\EunSun-Kevin-Leon\\testlogfile.log'
-white_f = 'C:\Users\EUN SUN LEE\Documents\EE209 Project\EunSun-Kevin-Leon\\whitelist.txt'
+log_f = 'testlogfile.log'
+white_f = 'whitelist.txt'
 
 searchtext1 = 'block'
 searchtext2 = 'ue0'

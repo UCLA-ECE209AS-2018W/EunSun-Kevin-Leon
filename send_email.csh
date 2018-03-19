@@ -1,6 +1,2 @@
 #!/bin/csh
-
-SRC_IP=$1
-DST_IP=$2
-
-echo External IP address $SRC_IP is trying to talk to $DST_IP. Should $SRC_IP be added to the whitelist? | /usr/local/bin/mail.php -s"Subject: New ip address detected!"
+echo "External IP address $1 is trying to talk to $2. Should $1 be added to the whitelist?" | /usr/local/bin/mail.php -s"Subject: New ip address detected!"

@@ -25,7 +25,20 @@ def addrule(interface, sourceip, destinationip):
 def mailnotification(sourceip, destinationip):
     subprocess.call(["./send_email.csh", sourceip, destinationip])
 
-
+def checkmailstatus(sourceip, destinationip):
+    with open(mail_f, 'r') as file:
+        json_dict = file.read()
+        if (json_dict): maillist_dict = json.loads(json_dict)
+        else: 
+            maillist_dict = {}
+		if sourceip in maillist_dict:
+			if destination_ip not in maillist_dict[sourceip]:
+				maillist_dict[sourceip].append(destinationip)
+				mailnotification(sourceip, destinationip)
+		else: 
+			dict_list = [destination_ip]
+			maillist_dict.update((sourceip:dict_list))
+			mailnotification(sourceip, destinationip)
 
 def add_lan_whitelist(sourceip, destinationip):
     dict_list = []
@@ -45,7 +58,7 @@ def add_lan_whitelist(sourceip, destinationip):
                     whitelist_dict[sourceip].append(destinationip)
                     addrule('lan' ,sourceip, destinationip)
                 else:
-                    mailnotification(sourceip, destinationip)
+                    checkmailstatus(sourceip,destinationip)
         else:
             dict_list = [timetostr(current_time), destinationip]
             whitelist_dict.update({sourceip:dict_list})
@@ -110,6 +123,7 @@ def filterlog_search(filename, searchtext1):
 #log_f = 'testlog.log'
 log_f = '/var/log/filter.log'
 white_f = 'whitelist.txt'
+mail_f = 'maillist.txt'
 
 
 searchtext1 = 'block'

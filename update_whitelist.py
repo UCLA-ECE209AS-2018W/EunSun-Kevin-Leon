@@ -18,9 +18,9 @@ def strtotime(time):
 def timedifference(a,b):
 	return ((b-a).seconds)
 	
-def addrule(sourceip, destinationip):
-	print ("rule added")
-	# subprocess.call(["./update_rules.csh", sourceip, destinationip])
+def addrule(interface, sourceip, destinationip):
+	# print ("rule added")
+	subprocess.call(["./update_rules.csh", interface, sourceip, destinationip])
 
 #def mailnotification(subject):
 
@@ -41,11 +41,11 @@ def add_lan_whitelist(sourceip, destinationip):
 				starttime = strtotime(whitelist_dict[sourceip][0])
 				if timedifference(starttime,current_time) < purge_duration :
 					whitelist_dict[sourceip].append(destinationip)
-					addrule(sourceip, destinationip) 
+					addrule('lan' ,sourceip, destinationip) 
 		else:
 			dict_list = [timetostr(current_time), destinationip]
 			whitelist_dict.update({sourceip:dict_list})
-			addrule(sourceip, destinationip) 
+			addrule('lan', sourceip, destinationip) 
 	with open(white_f, 'w') as file:
 		file.write(json.dumps(whitelist_dict))
 	
@@ -66,11 +66,11 @@ def add_wan_whitelist(sourceip, destinationip):
 				if sourceip in whitelist_dict:  #sourceip address exists
 					if destinationip not in whitelist_dict[sourceip]:
 						whitelist_dict[sourceip].append(destinationip)
-						addrule(sourceip, destinationip) 
+						addrule('wan', sourceip, destinationip) 
 				else:
 					dict_list = [timetostr(current_time), destinationip]
 					whitelist_dict.update({sourceip:dict_list})	
-					addrule(sourceip, destinationip)
+					addrule('wan', sourceip, destinationip)
 				
 	with open(white_f, 'w') as file:
 		file.write(json.dumps(whitelist_dict))

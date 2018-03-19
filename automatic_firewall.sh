@@ -2,8 +2,7 @@
 echo started
 sleep 10
 while [ 1 ]
-do
-  echo Blah 
+do 
   python2 /root/update_whitelist.py
-  sleep 30
+  sleep 10
 done

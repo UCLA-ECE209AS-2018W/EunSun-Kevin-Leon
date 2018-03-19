@@ -103,8 +103,8 @@ def filterlog_search(filename, searchtext1):
 						
 
 		
-log_f = 'testlogfile.log'
-#log_f = '/var/log/filter.log'
+#log_f = 'testlog.log'
+log_f = '/var/log/filter.log'
 white_f = 'whitelist.txt'
 
 

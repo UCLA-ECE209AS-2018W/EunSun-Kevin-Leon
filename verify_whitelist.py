@@ -36,7 +36,7 @@ def verify_whitelist():
                         deletelist.append(i)
                         for k in whitelist_dict[i]:
                             remove_rules(i,k)
-                            mailnotification(k,i)
+                            mailnotification(i,k)
 
                 for t in deletelist:
                     del whitelist_dict[t]
@@ -49,7 +49,7 @@ def verify_whitelist():
 #                                 destinationip = t
                                 whitelist_dict[i].remove(t)
                                 remove_rules(i,t)
-                                mailnotification(i, t)
+                                mailnotification(t, i)
 #     print("updated:")
 
 

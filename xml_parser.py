@@ -11,35 +11,35 @@ lines = inputfile.readlines()
 
 i = 0
 for line in lines:
-	if "<username>Easy Rule</username>" in line:
-		break
-	i += 1
+    if "<username>Easy Rule</username>" in line:
+        break
+    i += 1
 
 new_rule = lines[(i-13):(i+3)]
 del lines[(i-13):(i+3)]
 
 if sys.argv[2] == "lan":
-	i = 0
-	for line in lines:
-		if "<descr><![CDATA[Block all traffic going to WAN]]></descr>" in line:
-			break
-		i += 1
+    i = 0
+    for line in lines:
+        if "<descr><![CDATA[Block all traffic going to WAN]]></descr>" in line:
+            break
+        i += 1
 
-	j = 0
-	for line in new_rule:
-		lines.insert((i-23 + j), line)
-		j += 1
+    j = 0
+    for line in new_rule:
+        lines.insert((i-23 + j), line)
+        j += 1
 else:
-	i = 0
-	for line in lines:
-		if "<descr><![CDATA[Block all incoming traffic Leon]]></descr>" in line:
-			break
-		i += 1
+    i = 0
+    for line in lines:
+        if "<descr><![CDATA[Block all incoming traffic Leon]]></descr>" in line:
+            break
+        i += 1
 
-	j = 0
-	for line in new_rule:
-		lines.insert((i-22 + j), line)
-		j += 1
+    j = 0
+    for line in new_rule:
+        lines.insert((i-22 + j), line)
+        j += 1
 
 outputfile.writelines(lines)
 # close the file after reading the lines.

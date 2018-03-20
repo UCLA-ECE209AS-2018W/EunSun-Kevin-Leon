@@ -1,0 +1,40 @@
+ 
+<pf sense web interface>
+Remove easy rules - apply changes
+Reset system log 
+Configure email settings - system - advanced - notifications
+
+<pf sense firewall> 
+clear whitelist.txt and maillist.txt
+leave a dummy vlaue in blacklist.txt 
+add 192.168.10.3 to blacklist.txt
+*****Change purge time
+
+<user's computer - mac>
+sudo postfix start 
+
+Reboot pfsense
+Verify that raspberry pis are running/connected
+
+Show web interface rules page
+
+Run automatic_firewall in background
+
+IoT (192.168.1.10)  -> ping Good Server (192.168.10.2) : "Successfully added a rule" 
+Show easy rule update on web interface 
+
+IoT -> ping Bad Server (192.168.10.3) : No rule added due to blacklist
+
+After the purge time, show that we cannot add a LAN rule
+IoT -> ping Random IP address (192.168.10.20) : email notification
+Show email on Mac
+
+Show WAN rule added because the WAN IP is on the whitelist
+Good Server (192.168.10.2) to IoT : "Successfully added a rule"
+
+Bad Server (192.168.10.3) to IoT : No rule added due to blacklist and no previous connection
+
+Add (192.168.10.2) to blacklist.txt
+Show that the rule is removed from web interface : 2 email notifications
+IoT -> ping (192.168.10.2) : blocked by rule 
+

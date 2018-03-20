@@ -48,6 +48,6 @@ outputfile.close()
 
 f = fileinput.FileInput("new_config.xml", inplace=True, backup='.bak')
 for line in f:
-    sys.stdout.write(string.replace(line, "<username>Easy Rule</username>", "<username>Leon Test</username>"))
+    sys.stdout.write(string.replace(line, "<username>Easy Rule</username>", "<username>Leon Test"+sys.argv[3]+sys.argv[4]+"</username>"))
 f.close()
 

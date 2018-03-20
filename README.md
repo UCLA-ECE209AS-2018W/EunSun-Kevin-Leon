@@ -7,7 +7,7 @@
 
 *NVIDIA Jetson TK1 -* This board was chosen as the primary computer on the car for a good reason. The integrated GPU is CUDA enabled which means it can do complicated image processing and computer vision tasks in near-real-time. We have multiple high-bandwidth sensor inputs, so we do need the performance on-board.
 
-<img src="https://goo.gl/images/pumDuk" width="250">
+<img src="https://en.wikipedia.org/wiki/PfSense#/media/File:Pfsense_logo.png" width="250">
 
 *Teensy 3.2 Microcontroller -* This is the microcontroller that interfaces with the motors to relieve some of the duties from the main computer. The choice is somewhat arbitrary since other uControllers could also work, but the Teensy is cheap and Arduino compatible, so writing software for it is straightforward.
 

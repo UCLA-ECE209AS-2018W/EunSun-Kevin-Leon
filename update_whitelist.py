@@ -31,14 +31,17 @@ def checkmailstatus(sourceip, destinationip):
         if (json_dict): maillist_dict = json.loads(json_dict)
         else: 
             maillist_dict = {}
-		if sourceip in maillist_dict:
-			if destination_ip not in maillist_dict[sourceip]:
-				maillist_dict[sourceip].append(destinationip)
-				mailnotification(sourceip, destinationip)
-		else: 
-			dict_list = [destination_ip]
-			maillist_dict.update((sourceip:dict_list))
-			mailnotification(sourceip, destinationip)
+        if sourceip in maillist_dict:
+            if destinationip not in maillist_dict[sourceip]:
+                maillist_dict[sourceip].append(destinationip)
+                mailnotification(sourceip, destinationip)
+        else: 
+            dict_list = [destinationip]
+            maillist_dict.update({sourceip:dict_list})
+            mailnotification(sourceip, destinationip)
+
+    with open(mail_f, 'w') as file:
+        file.write(json.dumps(maillist_dict))
 
 def add_lan_whitelist(sourceip, destinationip):
     dict_list = []

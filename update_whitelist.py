@@ -6,7 +6,7 @@ import re
 import json
 import datetime
 
-purge_duration = 120 #seconds = 5minutes for testing
+purge_duration = 300 #seconds = 5minutes for testing
             
 
 def timetostr(time):

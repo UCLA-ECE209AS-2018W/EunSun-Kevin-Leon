@@ -44,3 +44,4 @@ IoT -> ping (192.168.10.2) : blocked by rule
 
 Bad Server (192.168.10.3) to IoT : No rule added due to blacklist and no previous connection
 
+kill automatic_firewall

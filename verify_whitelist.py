@@ -10,7 +10,7 @@ def mailnotification(sourceip, destinationip):
     subprocess.call(["./send_email_rm.csh", sourceip, destinationip])
 
 def remove_rules(sourceip,destinationip):
-    print "Rule successfully removed"
+    
     subprocess.call(["./rm_rule.csh", sourceip, destinationip])
 
 def verify_whitelist():
@@ -38,6 +38,7 @@ def verify_whitelist():
                         deletelist.append(i)
                         for k in whitelist_dict[i]:
                             remove_rules(i,k)
+                            print "Rule successfully removed_found from source ip list"
                             mailnotification(i,k)
 
                 for t in deletelist:
@@ -51,6 +52,7 @@ def verify_whitelist():
 #                                 destinationip = t
                                 whitelist_dict[i].remove(t)
                                 remove_rules(i,t)
+                                print "Rule successfully removed_found from destination ip list"
                                 mailnotification(t, i)
 
 #     print("updated:")

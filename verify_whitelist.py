@@ -6,9 +6,11 @@ import json
 import datetime
 
 def mailnotification(sourceip, destinationip):
+
     subprocess.call(["./send_email_rm.csh", sourceip, destinationip])
 
 def remove_rules(sourceip,destinationip):
+    print "Rule successfully removed"
     subprocess.call(["./rm_rule.csh", sourceip, destinationip])
 
 def verify_whitelist():

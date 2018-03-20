@@ -23,6 +23,7 @@ def addrule(interface, sourceip, destinationip):
     subprocess.call(["./update_rules.csh", interface, sourceip, destinationip])
 
 def mailnotification(sourceip, destinationip):
+    print "Mail notification sent for blocked ip address"
     subprocess.call(["./send_email.csh", sourceip, destinationip])
 
 def checkmailstatus(sourceip, destinationip):

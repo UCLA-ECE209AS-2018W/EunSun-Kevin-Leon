@@ -20,7 +20,7 @@ def verify_whitelist():
             blacklist.append(black_ip.split()[0])
 
 
-    whitlelist_dict = {}
+    whitelist_dict = {}
     with open(white_f, 'r') as file:
             json_dict = file.read()
             if (json_dict): 
@@ -50,13 +50,14 @@ def verify_whitelist():
                                 whitelist_dict[i].remove(t)
                                 remove_rules(i,t)
                                 mailnotification(t, i)
+
 #     print("updated:")
 
 
 #     print(whitelist_dict)
                                 #delete from whitelist
-    with open(white_f, 'w') as file:
-        file.write(json.dumps(whitelist_dict))
+                with open(white_f, 'w') as file:
+                    file.write(json.dumps(whitelist_dict))
 
 
 verify_whitelist()

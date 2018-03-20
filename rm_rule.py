@@ -8,15 +8,17 @@ outputfile = open("new_config.xml", 'w')
 
 lines = inputfile.readlines()
 
-
+found = False
 i = 0
 for line in lines:
     if "<username>Leon Test"+sys.argv[2]+sys.argv[3]+"</username>" in line:
+        found = True
         break
     i += 1
 
 # new_rule = lines[(i-13):(i+3)]
-del lines[(i-13):(i+3)]
+if found:
+    del lines[(i-13):(i+3)]
 '''
 if sys.argv[2] == "lan":
     i = 0

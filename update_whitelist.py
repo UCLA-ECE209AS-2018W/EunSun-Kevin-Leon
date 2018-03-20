@@ -101,6 +101,7 @@ def add_wan_whitelist(sourceip, destinationip):
 def filterlog_search(filename, searchtext1):
     lansearch = 'ue0'
     wansearch = 'em0'
+
     
     returntypes  = ['date/time','rulenumber','interface','source_ip','source_port','destination_ip','destination_port','protocol']
     with open(filename) as f:
@@ -116,10 +117,19 @@ def filterlog_search(filename, searchtext1):
                         source_ip = logline_list[18] #source_ip
                         destination_ip = logline_list[19] #destination_ip
                         protocol = logline_list[16] #protocol
+
+                        # checks blacklist
+                        blacklist = []
+                        with open('blacklist.txt','r') as f:
+                            for black_ip in f:
+                                blacklist.append(black_ip.split()[0])
+        
                         if interface == lansearch : 
-                            add_lan_whitelist(source_ip,destination_ip)
+                            if destination_ip not in blacklist:
+                                add_lan_whitelist(source_ip,destination_ip)
                         elif interface == wansearch : 
-                            add_wan_whitelist(source_ip,destination_ip)
+                            if source_ip not in blacklist:
+                                add_wan_whitelist(source_ip,destination_ip)
                         
 
         
@@ -127,6 +137,7 @@ def filterlog_search(filename, searchtext1):
 log_f = '/var/log/filter.log'
 white_f = 'whitelist.txt'
 mail_f = 'maillist.txt'
+black_f = 'blacklist.txt'
 
 
 searchtext1 = 'block'

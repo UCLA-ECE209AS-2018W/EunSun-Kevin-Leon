@@ -5,6 +5,9 @@ import re
 import json
 import datetime
 
+def mailnotification(sourceip, destinationip):
+    subprocess.call(["./send_email_rm.csh", sourceip, destinationip])
+
 def remove_rules(sourceip,destinationip):
     subprocess.call(["./rm_rule.csh", sourceip, destinationip])
 
@@ -33,6 +36,7 @@ def verify_whitelist():
                         deletelist.append(i)
                         for k in whitelist_dict[i]:
                             remove_rules(i,k)
+                            mailnotification(i, k)
 
                 for t in deletelist:
                     del whitelist_dict[t]
@@ -45,6 +49,7 @@ def verify_whitelist():
 #                                 destinationip = t
                                 whitelist_dict[i].remove(t)
                                 remove_rules(i,t)
+                                mailnotification(i, t)
 #     print("updated:")
 
 

@@ -36,7 +36,7 @@ def verify_whitelist():
                         deletelist.append(i)
                         for k in whitelist_dict[i]:
                             remove_rules(i,k)
-                            mailnotification(i, k)
+                            mailnotification(k,i)
 
                 for t in deletelist:
                     del whitelist_dict[t]

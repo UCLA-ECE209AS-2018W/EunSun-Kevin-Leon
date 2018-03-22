@@ -3,11 +3,18 @@
 
 ## Background
 
-**Material Selection:**
+**Introduction**
 
-*The number of IoT devices is increasing rapidly in the average household.
-*Devices can be full-fledged application computers, but also inexpensive devices with a prescribed task.
-*We try to create a user friendly automated firewall to help manage a large number of these devices.
+*The number of IoT devices is increasing rapidly in the average household.*
+*Devices can be full-fledged application computers, but also inexpensive devices with a prescribed task.*
+*We try to create a user friendly automated firewall to help manage a large number of these devices.*
+
+**Background**
+
+*We read some papers that attempted to characterize network traffic patterns (See References [1])*
+*Patterns vary quite a lot from device to device, but there seems to be a category of home automation devices (smart bulb, smart lock, etc.) that follow a broad pattern*
+*That is, the devices have a set of IP addresses they talk to in the initialization stage, and they don’t add very many new addresses afterwards.*
+*We assume that the device is not compromised in this grace period. (i.e. No zero-day vulnerability)*
 
 
 ![pfSenseLogo](https://github.com/UCLA-ECE209AS-2018W/EunSun-Kevin-Leon/blob/master/media/pfSense-Logo.jpg)

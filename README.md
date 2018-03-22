@@ -18,6 +18,13 @@
 *OpenWRT: The ARM port seemed like it was not maintained.*
 *pfSense: By this point we aquired a NUC, so an x86 installation was viable. Our lab already uses it, so we had some familiarity.This was our final choice. Purpose-built hardware + software combo.*
 
+**pfSense**
+*Open source software distribution based on FreeBSD.
+Combination of firewall, router, DHCP server, and etc.
+Well designed web interface and easy to configure.
+Easy deployment on physical device and virtual machine.
+Limited command line options and features.*
+
 
 
 

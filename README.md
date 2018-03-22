@@ -25,7 +25,7 @@ Well designed web interface and easy to configure.
 Easy deployment on physical device and virtual machine.
 Limited command line options and features.*
 
-![networkSetup](https://github.com/UCLA-ECE209AS-2018W/EunSun-Kevin-Leon/Network setup.png)
+![networksetup](https://github.com/UCLA-ECE209AS-2018W/EunSun-Kevin-Leon/blob/master/media/Networksetup.png)
 
 
 

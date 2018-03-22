@@ -5,7 +5,10 @@
 
 **Material Selection:**
 
-*NVIDIA Jetson TK1 -* This board was chosen as the primary computer on the car for a good reason. The integrated GPU is CUDA enabled which means it can do complicated image processing and computer vision tasks in near-real-time. We have multiple high-bandwidth sensor inputs, so we do need the performance on-board.
+*The number of IoT devices is increasing rapidly in the average household.
+*Devices can be full-fledged application computers, but also inexpensive devices with a prescribed task.
+*We try to create a user friendly automated firewall to help manage a large number of these devices.
+
 
 ![pfSenseLogo](https://github.com/UCLA-ECE209AS-2018W/EunSun-Kevin-Leon/blob/master/media/pfSense-Logo.jpg)
 

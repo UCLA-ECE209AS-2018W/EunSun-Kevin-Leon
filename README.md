@@ -79,12 +79,12 @@ Need to manually add gateway back at IoT side due to cache removal.*
 
 ## Future Work
 *Connect the network setup to internet.
-Reply the email notification to add a rule.
-Try different firewall distributions.
-Reverse DNS lookup to detect the change of server IP address.
-Access to public blacklist IP address database.
-Test the firewall under real network traffic.
-Use machine learning to detect anomalies in IoT traffic.*
+*Reply the email notification to add a rule.
+*Try different firewall distributions.
+*Reverse DNS lookup to detect the change of server IP address.
+*Access to public blacklist IP address database.
+*Test the firewall under real network traffic.
+*Use machine learning to detect anomalies in IoT traffic.*
 
 ## References
 *http://www2.ee.unsw.edu.au/~vijay/pubs/conf/17infocom.pdf

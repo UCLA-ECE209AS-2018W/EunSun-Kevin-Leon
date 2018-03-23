@@ -54,7 +54,7 @@ Ethernet Cables*
 
 
 **WAN Rules**
-*WAN rules begin by blocking all as default. This is a very restricted setting which blocks any WAN rule from the beggining. New WAN rules are added only if a LAN has talked to the specific WAN address. We achieve this by allowing WAN rules only if the opposite communication already existing in the witelist.
+*WAN rules begin by blocking all as default. This is a very restricted setting which blocks any WAN rule from the beggining. New WAN rules are added only if a LAN has talked to the specific WAN address. We achieve this by allowing WAN rules only if the opposite communication already existing in the witelist. Unlike LAN rules, we do not check grace period timeout because it is already strictly checked by whitelist. 
 
 *List of WAN rules in their priority :*
 * “Custom Rule 1” … “Custom Rule N”

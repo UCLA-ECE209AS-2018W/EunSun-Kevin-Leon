@@ -70,21 +70,21 @@ Ethernet Cables*
 *As mentioned above, the blacklist is generated manually to simulate online websitat that keep blacklist IP address. While the automatic firewall is running, we manually add blacklist and check if the rules with blacklisted IP are removed from pfSense web interface. First, we periodically update whitelist and rule by chekcing blacklist file. We also block any rule to be added if the IP address is in the blacklist.*
 
 ## Difficulties and Limitations
-*Current settings are in local network.
-Lack access to public blacklist database.
-Hardcoded grace period to trust newly deployed IoT devices.
-Pfsense has very limited command line features.
-LAN devices lose gateway record due to firewall cache removal.
-Need to manually add gateway back at IoT side due to cache removal.*
+* Current settings are in local network.
+* Lack access to public blacklist database.
+* Hardcoded grace period to trust newly deployed IoT devices.
+* Pfsense has very limited command line features.
+* LAN devices lose gateway record due to firewall cache removal.
+* Need to manually add gateway back at IoT side due to cache removal.*
 
 ## Future Work
-*Connect the network setup to internet.
-*Reply the email notification to add a rule.
-*Try different firewall distributions.
-*Reverse DNS lookup to detect the change of server IP address.
-*Access to public blacklist IP address database.
-*Test the firewall under real network traffic.
-*Use machine learning to detect anomalies in IoT traffic.*
+* Connect the network setup to internet.
+* Reply the email notification to add a rule.
+* Try different firewall distributions.
+* Reverse DNS lookup to detect the change of server IP address.
+* Access to public blacklist IP address database.
+* Test the firewall under real network traffic.
+* Use machine learning to detect anomalies in IoT traffic.*
 
 ## References
 *http://www2.ee.unsw.edu.au/~vijay/pubs/conf/17infocom.pdf

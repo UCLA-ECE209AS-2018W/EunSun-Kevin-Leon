@@ -36,6 +36,9 @@ Ethernet Cables*
 
 ## Automatic Firewall
 **Architecture**
+*whitelist, blacklist, maillist*
+![rulearchitecture](https://github.com/UCLA-ECE209AS-2018W/EunSun-Kevin-Leon/blob/master/media/rulesarchitecture.png)
+
 
 **LAN Rules**
 *Sample Rule List

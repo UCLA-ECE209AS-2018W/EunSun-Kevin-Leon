@@ -14,9 +14,9 @@
 ## pfSense
 **Possible Firewall Choices**
 
-*IPFire: This is the first one we tried. Seemed to be well-maintained and allowed an ARM installation, so we hoped it would work on a Raspberry Pi 3. Problems with Installation, abandoned it*
+*IPFire: This is the first one we tried. Seemed to be well-maintained and allowed an ARM installation, so we hoped it would work on a Raspberry Pi 3. However we faced problems with the installation, so we abandoned it*
 *OpenWRT: The ARM port seemed like it was not maintained.*
-*pfSense: By this point we aquired a NUC, so an x86 installation was viable. Our lab already uses it, so we had some familiarity.This was our final choice. Purpose-built hardware + software combo.*
+*pfSense: By this point we aquired an x86 platform, so the pfSense installation image was viable. Our lab already uses it, so we had some familiarity.This was our final choice.*
 
 **pfSense**
 *Open source software distribution based on FreeBSD.
@@ -36,7 +36,7 @@ Ethernet Cables*
 
 ## Automatic Firewall
 **Architecture**
-*The architecture of automatic firewall is described in the image below. The firewall rules are divided into WAN rules and LAN rules. Both rules then have default rules and custom rules, which are added by the automatic firewall we designed. Separate from the rules, we keep the lists of whitelist, blacklist, and maillist. Whitelist are added along with the WAN and LAN rules. We added a blacklist file which contains a list of IP addresses. There are websites which list the blacklisted IP addresses. However, our firewall setup operates within local network so the file is added to simulate the checking of blacklised IP address from such websites. Lastly, we keep a maillist file so that we do not pour large amount of emails to the administrator. This prevents the multiple emails with the same notification.*
+*The architecture of automatic firewall is described in the image below. The firewall rules are divided into WAN rules and LAN rules. Both rules then have default rules and custom rules, which are added by the automatic firewall we designed. Separate from the rules, we keep a whitelist, blacklist, and a maillist. The whitelist is updated along with the WAN and LAN rules. We added a blacklist file which contains a list of IP addresses. There are websites which list the blacklisted IP addresses. However, our firewall setup operates within local network so the file is added to simulate the checking of blacklised IP address from such websites. Lastly, we keep a maillist file so that we do not pour large amount of emails to the administrator. This prevents the multiple emails with the same notification.*
 
 ![rulearchitecture](https://github.com/UCLA-ECE209AS-2018W/EunSun-Kevin-Leon/blob/master/media/rulesarchitecture.png)
 

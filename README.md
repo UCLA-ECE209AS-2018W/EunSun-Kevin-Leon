@@ -67,7 +67,7 @@ Ethernet Cables*
 *One feature we included for the administrator's convenience is email notification. First the administrator's email address and IP address is configured in the web interface. A notification is triggered in two cases. First, a email is sent when a LAN device is tryng to communicate to a WAN IP after the grace period. The second case is when a previously whitelisted LAN/WAN device is blacklisted and any pass rule that includes blacklist IP is removed.*
 
 **Blacklist**
-*As mentioned above, the blacklist is generated manually to simulate online websitat that keep blacklist IP address. While the automatic firewall is running, we manually add blacklist and check if the rules with blacklisted IP are removed from pfSense web interface. First, we periodically update whitelist and rule by chekcing blacklist file. We also block any rule to be added if the IP address is in the blacklist. 
+*As mentioned above, the blacklist is generated manually to simulate online websitat that keep blacklist IP address. While the automatic firewall is running, we manually add blacklist and check if the rules with blacklisted IP are removed from pfSense web interface. First, we periodically update whitelist and rule by chekcing blacklist file. We also block any rule to be added if the IP address is in the blacklist.*
 
 ## Difficulties and Limitations
 *Current settings are in local network.

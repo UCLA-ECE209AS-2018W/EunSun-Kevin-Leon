@@ -44,7 +44,7 @@ Ethernet Cables*
 **LAN Rules**
 *To guarantee administrator's access to pfSense web interface, the is unmodifiable and highest-prioritized anti-lockout rule in LAN rules. Then the rules start with two default rules. First default rule blocks all communication from LAN to non-LAN. Then, the second default rule allows LAN to any. This has less priority than the first defult rule. Then, the custom rules added by automatic firewall have higher priority than the two default rules. Once the automatic firewall begins, all the communication going from LAN to non-LAN are added into the rules list and whitelist. However, whitelist keeps the timestamp when each sourceip address is first added so no more new rules with the source ip can be added after the grace period. Once the grace period of the source ip has passed, any new outgoing request is blocked. The list below shows the priority of all LAN rules in order.*
 
-*List of LAN rules in their priority :*
+*List of LAN rules in their priority order:*
 * Anti-lockout rule (Guaranteed admin access to web interface)
 * Bullet list item 2
 * Anti-lockout rule (Guaranteed admin access to web interface)
@@ -54,12 +54,11 @@ Ethernet Cables*
 
 
 **WAN Rules**
-*WAN rules begin by blocking all as default. This is a very restricted setting which blocks any WAN rule from the beggining. New WAN rules are added only if a LAN has talked to the specific WAN address. We achieve this by allowing WAN rules only if the opposite communication already existing in the witelist. Unlike LAN rules, we do not check grace period timeout because it is already strictly checked by whitelist. 
+*WAN rules begin by blocking all as default. This is a very restricted setting which blocks any WAN rule from the beggining. New WAN rules are added only if a LAN has talked to the specific WAN address. We achieve this by allowing WAN rules only if the opposite communication already existing in the witelist. Unlike LAN rules, we do not check grace period timeout because it is already strictly checked by whitelist. Below list shows the WAN rules in their priority order. From the sample whitelist, for example, the last rule from the WAN IP address, 192.168.10.,2 to the LAN IP address, 192.168.1.30, can be added only after the first rule from 192.168.1.30 to 192.1668.10.2 has been added.
 
-*List of WAN rules in their priority :*
+*List of WAN rules in their priority order:*
 * “Custom Rule 1” … “Custom Rule N”
 * Block all incoming request from external network (Default)
-
 
 *Sample Whitelist :*
 *{“192.168.1.30": [“2018-Jan-03:10:00:00”, “1.1.1.3", “192.168.10.2”], “192.168.1.10": [“2018-Jan-03:10:00:10”, “1.1.1.2"], “192.168.10.2”: [“2018-Jan-03:10:00:20", “192.168.1.30”]}*

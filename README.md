@@ -44,7 +44,7 @@ Ethernet Cables*
 **LAN Rules**
 *To guarantee administrator's access to pfSense web interface, the is unmodifiable and highest-prioritized anti-lockout rule in LAN rules. Then the rules start with two default rules. First default rule blocks all communication from LAN to non-LAN. Then, the second default rule allows LAN to any. This has less priority than the first defult rule. Then, the custom rules added by automatic firewall have higher priority than the two default rules. Once the automatic firewall begins, all the communication going from LAN to non-LAN are added into the rules list and whitelist. However, whitelist keeps the timestamp when each sourceip address is first added so no more new rules with the source ip can be added after the grace period. Once the grace period of the source ip has passed, any new outgoing request is blocked. The list below shows the priority of all LAN rules in order.*
 
-* List of rules in their priority :
+*List of LAN rules in their priority :*
 * Anti-lockout rule (Guaranteed admin access to web interface)
 * Bullet list item 2
 * Anti-lockout rule (Guaranteed admin access to web interface)
@@ -56,7 +56,7 @@ Ethernet Cables*
 
 **WAN Rules**
 
-* List of rules in their priority :
+*List of WAN rules in their priority :*
 * Add “Custom Rule 1” … “Custom Rule N”
 * Block all incoming request from external network (Default)
 * Check whitelist and add Custom Rules

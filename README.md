@@ -68,7 +68,7 @@ A previously whitelisted LAN/WAN IP is blacklisted and any pass rule that includ
 *Update whitelist by checking blacklist periodically
 No new rule added if the IP address is in the blacklist*
 
-**Difficulties and Limitations**
+## Difficulties and Limitations
 *Current settings are in local network.
 Lack access to public blacklist database.
 Hardcoded grace period to trust newly deployed IoT devices.
@@ -76,7 +76,7 @@ Pfsense has very limited command line features.
 LAN devices lose gateway record due to firewall cache removal.
 Need to manually add gateway back at IoT side due to cache removal.*
 
-**Future Work**
+## Future Work
 *Connect the network setup to internet.
 Reply the email notification to add a rule.
 Try different firewall distributions.
@@ -85,7 +85,7 @@ Access to public blacklist IP address database.
 Test the firewall under real network traffic.
 Use machine learning to detect anomalies in IoT traffic.*
 
-**References**
+## References
 *http://www2.ee.unsw.edu.au/~vijay/pubs/conf/17infocom.pdf
 https://doc.pfsense.org/index.php/Main_Page*
 

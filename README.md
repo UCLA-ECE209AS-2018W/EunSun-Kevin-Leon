@@ -54,7 +54,7 @@ Ethernet Cables*
 
 
 **WAN Rules**
-*WAN rules begin by blocking all as default. This is a very restricted setting which blocks any WAN rule from the beggining. New WAN rules are added only if a LAN has talked to the specific WAN address. We achieve this by allowing WAN rules only if the opposite communication already existing in the witelist. Unlike LAN rules, we do not check grace period timeout because it is already strictly checked by whitelist. Below list shows the WAN rules in their priority order. From the sample whitelist, for example, the last rule from the WAN IP address, 192.168.10.,2 to the LAN IP address, 192.168.1.30, can be added only after the first rule from 192.168.1.30 to 192.1668.10.2 has been added.
+*WAN rules begin by blocking all as default. This is a very restricted setting which blocks any WAN rule from the beggining. New WAN rules are added only if a LAN has talked to the specific WAN address. We achieve this by allowing WAN rules only if the opposite communication already existing in the witelist. Unlike LAN rules, we do not check grace period timeout because it is already strictly checked by whitelist. Below list shows the WAN rules in their priority order. From the sample whitelist, for example, the last rule from the WAN IP address, 192.168.10.,2 to the LAN IP address, 192.168.1.30, can be added only after the first rule from 192.168.1.30 to 192.1668.10.2 has been added.*
 
 *List of WAN rules in their priority order:*
 * “Custom Rule 1” … “Custom Rule N”
@@ -64,11 +64,7 @@ Ethernet Cables*
 *{“192.168.1.30": [“2018-Jan-03:10:00:00”, “1.1.1.3", “192.168.10.2”], “192.168.1.10": [“2018-Jan-03:10:00:10”, “1.1.1.2"], “192.168.10.2”: [“2018-Jan-03:10:00:20", “192.168.1.30”]}*
 
 **Email Notification**
-
-*Administrator email address is configured in the web interface.
-A notification is triggered when:
-A LAN device is trying to communicate to a WAN IP after grace period.
-A previously whitelisted LAN/WAN IP is blacklisted and any pass rule that includes blacklist IP is removed.*
+*One feature we included for the administrator's convenience is email notification. First the administrator's email address and IP address is configured in the web interface. A notification is triggered in two cases. First, a email is sent when a LAN device is tryng to communicate to a WAN IP after the grace period. The second case is when a previously whitelisted LAN/WAN device is blacklisted and any pass rule that includes blacklist IP is removed.*
 
 **Blacklist**
 *Update whitelist by checking blacklist periodically

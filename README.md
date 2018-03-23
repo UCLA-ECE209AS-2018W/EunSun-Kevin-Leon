@@ -48,20 +48,21 @@ Ethernet Cables*
 * Anti-lockout rule (Guaranteed admin access to web interface)
 * Bullet list item 2
 * Anti-lockout rule (Guaranteed admin access to web interface)
-* Add “Custom Rule 1” … “Custom Rule N”
+* “Custom Rule 1” … “Custom Rule N”
 * Block all LAN to !LAN rule (Default)
 * Allow LAN to Any rule (Default)
-* Grace period timeout for each IoT
-* Block all new outgoing requests from local network
+
 
 **WAN Rules**
+*WAN rules begin by blocking all as default. This is a very restricted setting which blocks any WAN rule from the beggining. New WAN rules are added only if a LAN has talked to the specific WAN address. We achieve this by allowing WAN rules only if the opposite communication already existing in the witelist.
 
 *List of WAN rules in their priority :*
-* Add “Custom Rule 1” … “Custom Rule N”
+* “Custom Rule 1” … “Custom Rule N”
 * Block all incoming request from external network (Default)
-* Check whitelist and add Custom Rules
 
-* Sample Whitelist : {“192.168.1.30": [“2018-Jan-03:10:00:00”, “1.1.1.3", “192.168.10.2”], “192.168.1.10": [“2018-Jan-03:10:00:10”, “1.1.1.2"], “192.168.10.2”: [“2018-Jan-03:10:00:20", “192.168.1.30”]}*
+
+*Sample Whitelist :*
+*{“192.168.1.30": [“2018-Jan-03:10:00:00”, “1.1.1.3", “192.168.10.2”], “192.168.1.10": [“2018-Jan-03:10:00:10”, “1.1.1.2"], “192.168.10.2”: [“2018-Jan-03:10:00:20", “192.168.1.30”]}*
 
 **Email Notification**
 
